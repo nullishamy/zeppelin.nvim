@@ -9,9 +9,11 @@ function zeppelin.setup(opts)
 
     config.apply(opts)
 
-    require('zeppelin.lsp').setup()
-    require('zeppelin.mason').setup()
-    require('zeppelin.treesitter').setup()
+    local cfg = config.get()
+
+    if cfg.lspconfig.enable  then require('zeppelin.lsp').setup() end
+    if cfg.mason.enable      then require('zeppelin.mason').setup() end
+    if cfg.treesitter.enable then require('zeppelin.treesitter').setup() end
 end
 
 return zeppelin

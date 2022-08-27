@@ -1,7 +1,15 @@
 local config = { }
 
 local DEFAULTS = {
-
+    treesitter = {
+        enable = true;
+    },
+    mason = {
+        enable = true;
+    },
+    lspconfig = {
+        enable = true;
+    }
 }
 
 local tbl = require('plenary.tbl')
